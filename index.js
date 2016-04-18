@@ -21,7 +21,11 @@ var convert = function(filePath, filePathNew) {
             });
 
             $(this).find('td').each(function() {
-                matrix[i][j] = '"' + $(this).text().trim() + '"';
+                if ($(this).text().trim().match(/[\r\n\t\\",]/)) {
+			matrix[i][j] = '"' + $(this).text().trim().replace(/"/g, '""') + '"';
+		} else {
+			matrix[i][j] = $(this).text().trim();
+		}
                 j++;
                 return matrix;
             });
