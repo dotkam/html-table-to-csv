@@ -1,7 +1,7 @@
 {
   "name": "html-table-to-csv",
-  "version": "1.0.0",
-  "description": "Converting HTML table to CSV file from command line",
+  "version": "1.1.0",
+  "description": "Converting HTML table to CSV file from the command line",
   "main": "index.js",
   "dependencies": {
     "cheerio": "0.19.0"
@@ -12,13 +12,13 @@
   },
   "keywords": [
     "html",
-    "table'",
+    "table",
     "csv"
   ],
   "author": {
     "name": "Antuan Khanna",
     "email": "antuan@antuankhanna.com",
-    "url": "http://www.antuankhanna.com"
+    "url": "https://www.antuankhanna.com"
   },
   "license": "MIT",
   "bugs": {
