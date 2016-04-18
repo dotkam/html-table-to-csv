@@ -1,5 +1,5 @@
-var cheerio = require('cheerio'),
-    fs = require('fs');
+var cheerio = require('cheerio');
+var fs = require('fs');
 
 var convert = function(filePath, filePathNew) {
 
@@ -22,10 +22,10 @@ var convert = function(filePath, filePathNew) {
 
             $(this).find('td').each(function() {
                 if ($(this).text().trim().match(/[\r\n\t\\",]/)) {
-			matrix[i][j] = '"' + $(this).text().trim().replace(/"/g, '""') + '"';
-		} else {
-			matrix[i][j] = $(this).text().trim();
-		}
+                    matrix[i][j] = '"' + $(this).text().trim().replace(/"/g, '""') + '"';
+                } else {
+                    matrix[i][j] = $(this).text().trim();
+                }
                 j++;
                 return matrix;
             });
@@ -34,7 +34,7 @@ var convert = function(filePath, filePathNew) {
         });
 
         return matrix;
-    }
+    };
 
     function createCsv(data) {
         var csv = '';
@@ -51,6 +51,6 @@ var convert = function(filePath, filePathNew) {
         console.log('- csv saved to ' + filePathNew);
     });
 
-}
+};
 
 convert(process.argv[2], process.argv[3]);
